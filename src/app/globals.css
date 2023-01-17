@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Proxima Nova, system-ui, sans-serif;
+  }
+}
+
+:root {
+  --background-color:  #161C40;
+  --accent-color:  #3D466D;
+  --selection-color:  #535e8e;
+  --text-color:  #ffffff;
+}
+
+body{
+  background-color: #161C40;
+  font-family: 'Sofia Sans','sans-serif';
+}
