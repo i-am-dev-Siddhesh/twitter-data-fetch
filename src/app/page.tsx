@@ -11,17 +11,22 @@ export default async function Home(props: any) {
     name: string;
     username: string;
     id: string;
+    public_metrics: {
+      followers_count: number | string;
+      following_count: number | string;
+      listed_count: number | string;
+      tweet_count: number | string;
+    };
   };
 
   let newData: User[] = [];
   try {
-    const res = await fetch(`https://twitter-data-fetch.vercel.app/api/users`);
+    const res = await fetch(`${process.env.API_BASE_URL}/api/users`);
     const data = await res.json();
     newData = data.data;
   } catch (error) {
     console.log(error);
   }
- 
 
   return (
     <main className="max-w-4xl mx-auto my-auto">
@@ -40,6 +45,8 @@ export default async function Home(props: any) {
             username={user.username}
             id={user.id}
             img={ImgData[i]}
+            followers={+user.public_metrics.followers_count}
+            following={+user.public_metrics.following_count}
           />
         ))}
 
